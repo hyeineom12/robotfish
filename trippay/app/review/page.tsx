@@ -6,6 +6,7 @@ import { useMemo } from "react";
 import { useTrip } from "@/components/store";
 import { CATEGORY_MAP, DESTINATION_MAP, PROFILES } from "@/lib/catalog";
 import { categoryShares, classifyProfile, settle } from "@/lib/analysis";
+import { asset } from "@/lib/asset";
 import { krw, pct } from "@/lib/format";
 import {
   AiBadge,
@@ -65,7 +66,7 @@ export default function ReviewPage() {
       <Body>
         <div className="relative overflow-hidden rounded-card p-4 text-white shadow-card">
           <Image
-            src={dest.image}
+            src={asset(dest.image)}
             alt={`${dest.city} 대표 사진`}
             fill
             sizes="(max-width: 420px) 100vw, 420px"

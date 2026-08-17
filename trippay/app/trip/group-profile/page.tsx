@@ -1,6 +1,7 @@
 "use client";
 
 import { useTrip } from "@/components/store";
+import { asset } from "@/lib/asset";
 import { CARD_MAP, CATEGORY_MAP, PROFILES } from "@/lib/catalog";
 import { groupBudgetCapacity } from "@/lib/analysis";
 import { krwShort, pct } from "@/lib/format";
@@ -49,7 +50,7 @@ export default function GroupProfilePage() {
       <Body>
         <Card className="animate-pop relative overflow-hidden text-white">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={GROUP_PHOTO} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
+          <img src={asset(GROUP_PHOTO)} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
           {/* 사진 위에서도 흰 글씨가 읽히도록 어둡게 덮는다 */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
           <div className="relative">

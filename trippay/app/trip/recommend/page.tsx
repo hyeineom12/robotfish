@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useTrip } from "@/components/store";
 import { breakdownTotal, budgetCapacity, groupBudgetCapacity, rankDestinations } from "@/lib/analysis";
 import { MEMBER_MAP } from "@/lib/demo";
+import { asset } from "@/lib/asset";
 import { krw, krwShort } from "@/lib/format";
 import { AiBadge, Body, Card, Footer, MoneyRow, Notice, Screen, SectionTitle, Sentences, TopBar } from "@/components/ui";
 
@@ -126,7 +127,7 @@ export default function Recommend() {
                 <div className="flex items-start gap-3">
                   <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl bg-surface">
                     <Image
-                      src={r.dest.image}
+                      src={asset(r.dest.image)}
                       alt={`${r.dest.city} 대표 사진`}
                       fill
                       sizes="56px"

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CATEGORY_MAP } from "@/lib/catalog";
+import { asset } from "@/lib/asset";
 import { krw, pct } from "@/lib/format";
 import type { CategoryId } from "@/lib/types";
 
@@ -107,7 +108,7 @@ export function Avatar({
       className={`relative inline-block shrink-0 overflow-hidden rounded-full bg-surface ${className}`}
       style={{ width: size, height: size }}
     >
-      <Image src={src} alt={name} fill sizes={`${size * 3}px`} className="object-cover" />
+      <Image src={asset(src)} alt={name} fill sizes={`${size * 3}px`} className="object-cover" />
     </span>
   );
 }

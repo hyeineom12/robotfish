@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { asset } from "@/lib/asset";
 import { INSTITUTIONS, type Institution } from "@/lib/catalog";
 import { Body, Card, Footer, Notice, Screen, SectionTitle, TopBar } from "@/components/ui";
 
@@ -10,7 +11,7 @@ function InstitutionLogo({ item }: { item: Institution }) {
       // 로고는 28px로만 쓰여 최적화 이득이 없고 SVG가 섞여 있어 img 태그를 그대로 사용.
       // 심벌형(정사각)과 워드마크형(가로로 긴)이 섞여 있어 높이만 고정하고 폭은 타일에 맡긴다.
       // eslint-disable-next-line @next/next/no-img-element
-      <img src={item.logo} alt="" aria-hidden className="h-7 w-full object-contain" />
+      <img src={asset(item.logo)} alt="" aria-hidden className="h-7 w-full object-contain" />
     );
   }
   return (

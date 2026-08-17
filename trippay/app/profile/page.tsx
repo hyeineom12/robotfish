@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useTrip } from "@/components/store";
 import { budgetCapacity, categorySums } from "@/lib/analysis";
 import { MEMBER_MAP } from "@/lib/demo";
+import { asset } from "@/lib/asset";
 import { CATEGORY_MAP } from "@/lib/catalog";
 import { krw, krwShort, pct } from "@/lib/format";
 import {
@@ -54,7 +55,7 @@ export default function ProfilePage() {
           {p.image && (
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.image} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
+              <img src={asset(p.image)} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
               {/* 사진 위에서도 흰 글씨가 읽히도록 어둡게 덮는다 */}
               <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/60 to-black/45" />
             </>

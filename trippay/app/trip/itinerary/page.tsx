@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useTrip } from "@/components/store";
 import { CATEGORIES, DESTINATION_MAP, CATEGORY_MAP } from "@/lib/catalog";
 import { buildItinerary } from "@/lib/itinerary";
+import { asset } from "@/lib/asset";
 import { krw, dateFull, dateLabel, weekdayLong } from "@/lib/format";
 import { RouteMap } from "@/components/RouteMap";
 import { AiBadge, Body, Card, Dot, Footer, Notice, Screen, SectionTitle, Sentences, TopBar } from "@/components/ui";
@@ -120,7 +121,7 @@ export default function ItineraryPage() {
       <Body>
         <div className="relative overflow-hidden rounded-card shadow-card">
           <Image
-            src={dest.image}
+            src={asset(dest.image)}
             alt={`${dest.city} 대표 사진`}
             fill
             sizes="(max-width: 420px) 100vw, 420px"
