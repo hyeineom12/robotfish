@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-[#e9ebf2] text-ink-900 antialiased;
+}
+
+@layer components {
+  .card {
+    @apply rounded-card bg-white shadow-card;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-2xl px-4 py-3 text-[15px] font-semibold transition active:scale-[0.98] disabled:opacity-40 disabled:active:scale-100;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-white hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply btn bg-brand-50 text-brand-700 hover:bg-brand-100;
+  }
+  .btn-line {
+    @apply btn border border-ink-300/60 bg-white text-ink-700 hover:bg-surface;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+  .label {
+    @apply text-xs font-semibold uppercase tracking-wide text-ink-300;
+  }
+}
+
+/* 홈 인디케이터에 버튼이 가리지 않게 안전 영역만큼 더 띄운다 */
+.safe-bottom { padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes pop { 0% { transform: scale(0.85); opacity: 0 } 60% { transform: scale(1.04) } 100% { transform: scale(1); opacity: 1 } }
+.animate-pop { animation: pop 0.35s cubic-bezier(.2,.8,.3,1) both; }
+
+@keyframes slideup { from { transform: translateY(10px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+.animate-slideup { animation: slideup 0.35s ease both; }
